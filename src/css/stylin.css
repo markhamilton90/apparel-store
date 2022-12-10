@@ -1,0 +1,20 @@
+.store {
+  display: flex;
+}
+.store .sidebar {
+  width: 30%;
+  height: 100%;
+  background: yellow;
+}
+.store .results {
+  display: flex;
+  width: 70%;
+  height: 100%;
+  background: pink;
+}
+.store .results .inventory {
+  background: #eee;
+  flex-basis: 20%;
+  margin: 10px;
+  text-align: center;
+}
