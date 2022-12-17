@@ -25,7 +25,7 @@ class App extends React.Component {
         return (
             <div className="store">
                 <Sidebar filters={ this.state.filters } handleClick={ this.handleClick } activeFilter={ this.state.activeFilter } />
-                <Results inventory={ this.state.inventory } />
+                <Results inventory={ this.state.inventory } activeFilter={ this.state.activeFilter } />
             </div>
         )
     }

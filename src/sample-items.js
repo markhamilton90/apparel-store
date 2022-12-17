@@ -3,7 +3,7 @@ const items = {
     item1: {
         title: 'Cool shirt',
         price: 12.99,
-        type: 'shirt'
+        type: 'shirts'
     },
     item2: {
         title: 'Cool pants',
