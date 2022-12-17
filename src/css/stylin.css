@@ -2,13 +2,27 @@
   display: flex;
 }
 .store .sidebar {
-  width: 30%;
+  display: flex;
+  width: 20%;
   height: 100%;
-  background: yellow;
+  background: #eee;
+}
+.store .sidebar .filter {
+  flex-basis: 50%;
+  background: #fff;
+  text-align: center;
+  padding: 25px 0;
+  margin: 10px;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.store .sidebar .filter:hover, .store .sidebar .filter.selected {
+  background: #000;
+  color: #fff;
 }
 .store .results {
   display: flex;
-  width: 70%;
+  width: 80%;
   height: 100%;
   background: pink;
 }
