@@ -2,13 +2,19 @@
 const filters = {
     shirts: {
         label: 'Shirts',
-        name: 'shirts',
-        selected: false
+        name: 'shirts'
     },
     pants: {
         label: 'Pants',
-        name: 'pants',
-        selected: false
+        name: 'pants'
+    },
+    shoes: {
+        label: 'Shoes',
+        name: 'shoes'
+    },
+    hats: {
+        label: 'Hats',
+        name: 'pants'
     }
 }
 
