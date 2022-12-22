@@ -13,7 +13,7 @@ class App extends React.Component {
         filters: filters,
         activeFilter: null,
         query: '',
-        inCart: []
+        inCart: {}
     }
 
     onChange = value => {
@@ -29,9 +29,16 @@ class App extends React.Component {
         })
     }
 
-    addToCart = item => {
-        const inCart = [ ...this.state.inCart ];
-        inCart.push(item);
+    addToCart = (key, value) => {
+        const inCart = { ...this.state.inCart };
+
+        if (!inCart.hasOwnProperty(key)) {
+            inCart[key] = value;
+            inCart[key]['count'] = 1;
+        } else {
+            inCart[key]['count'] += 1;
+        }
+
         this.setState({
             inCart: inCart
         })

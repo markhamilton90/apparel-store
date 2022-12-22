@@ -22,7 +22,7 @@ class Results extends React.Component {
             <div className="results">
                 {
                     inventoryKeys.map( item => (
-                        <Result key={ item } item={ inventory[item] } addToCart={ this.props.addToCart } />
+                        <Result key={ item } itemKey={ item } item={ inventory[item] } addToCart={ this.props.addToCart } />
                     ))
                 }
             </div>

@@ -56,18 +56,17 @@
         flex-wrap: wrap;
         width: calc(100% - 200px);
         height: 100%;
-        background: pink;
         .inventory {
             flex-basis: 20%;
             background: #eee;
             text-align: center;
+            border: 1px solid;
             padding: 15px;
-            margin: 10px;
+            margin: 0 10px 10px;
         }
     }
     .cart {
         width: 100%;
-        height: 300px;
-        background: green;
+        border-top: 1px dashed;
     }
 }

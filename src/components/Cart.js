@@ -5,9 +5,12 @@ class Cart extends React.Component {
         const cartItems = this.props.inCart;
         return (
             <div className="cart">
+                <h2>In Cart:</h2>
                 {
-                    cartItems.map( item => (
-                        <p>{ item.title }</p>
+                    Object.keys(cartItems).map( item => (
+                        <p key={ this.props.itemKey }>
+                            { cartItems[item].title } { cartItems[item].count > 1 ? `x${ cartItems[item].count }` : '' }
+                        </p>
                     ))
                 }
             </div>
