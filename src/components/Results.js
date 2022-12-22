@@ -3,14 +3,10 @@ import Result from './Result';
 
 class Results extends React.Component {
 
-    matchesQuery = item => {
-        item.includes(this.props.query)
-    }
-
     render() {
         const activeFilter = this.props.activeFilter;
         const inventory = this.props.inventory;
-        const query = (this.props.query).toLowerCase();
+        const query = (this.props.query).trim().toLowerCase();
 
         let inventoryKeys = Object.keys(inventory);
         // filter by filters selected
@@ -19,14 +15,14 @@ class Results extends React.Component {
         }
         // filter by search query
         if ( query != false ) {
-            inventoryKeys = inventoryKeys.filter( item => inventory[item].title.toLowerCase().includes(query));
+            inventoryKeys = inventoryKeys.filter( item => inventory[item].title.trim().toLowerCase().includes(query));
         }
 
         return (
             <div className="results">
                 {
                     inventoryKeys.map( item => (
-                        <Result key={ item } item={ inventory[item] } />
+                        <Result key={ item } item={ inventory[item] } addToCart={ this.props.addToCart } />
                     ))
                 }
             </div>

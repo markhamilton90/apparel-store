@@ -1,0 +1,74 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.store {
+  display: flex;
+  flex-wrap: wrap;
+}
+.store .searchbar {
+  flex-basis: 100%;
+  padding-bottom: 10px;
+}
+.store .searchbar input {
+  width: 100%;
+  height: 50px;
+  appearance: none;
+  color: #999;
+  font-style: italic;
+  outline: none;
+  border: 1px solid #999;
+  font-size: 1.75rem;
+  padding: 0 15px;
+}
+.store .searchbar input::placeholder {
+  color: #d7d7d7;
+}
+.store .sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 100%;
+  background: #eee;
+  padding-left: 6px;
+  padding-top: 6px;
+}
+.store .sidebar .filter {
+  flex-basis: calc(50% - 6px);
+  background: #fff;
+  text-align: center;
+  padding: 25px 0;
+  transition: all 0.25s;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+.store .sidebar .filter:hover {
+  background: #888;
+  color: #fff;
+}
+.store .sidebar .filter.selected {
+  background: #000;
+  color: #fff;
+}
+.store .results {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 200px);
+  height: 100%;
+  background: pink;
+}
+.store .results .inventory {
+  flex-basis: 20%;
+  background: #eee;
+  text-align: center;
+  padding: 15px;
+  margin: 10px;
+}
+.store .cart {
+  width: 100%;
+  height: 300px;
+  background: green;
+}
