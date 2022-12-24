@@ -15,7 +15,7 @@ class Results extends React.Component {
         }
         // filter by search query
         if ( query != false ) {
-            inventoryKeys = inventoryKeys.filter( item => inventory[item].title.trim().toLowerCase().includes(query));
+            inventoryKeys = inventoryKeys.filter( item => inventory[item].title.trim().toLowerCase().includes(query) || inventory[item].type.trim().toLowerCase().includes(query));
         }
 
         return (
