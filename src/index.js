@@ -1,8 +1,8 @@
 // let's go!
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
+import Router from './components/Router';
 import './css/styles.css';
 import 'normalize.css';
 
-render(<App />, document.getElementById('main'));
+render(<Router />, document.getElementById('main'));
