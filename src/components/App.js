@@ -11,19 +11,19 @@ class App extends React.Component {
     state = {
         inventory: items,
         filters: filters,
-        activeFilter: null,
+        activeFilter: [],
         query: '',
         inCart: {}
     }
 
-    onChange = value => {
+    onChange = event => {
         this.setState({
-            query: value
+            query: event.currentTarget.value
         })
     }
 
     handleClick = filter => {
-        const newActiveFilter = filter != this.state.activeFilter ? filter : null;
+        const newActiveFilter = filter != this.state.activeFilter ? filter : [];
         this.setState({
             activeFilter: newActiveFilter
         })

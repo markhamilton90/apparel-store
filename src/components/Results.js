@@ -10,8 +10,9 @@ class Results extends React.Component {
 
         let inventoryKeys = Object.keys(inventory);
         // filter by filters selected
-        if ( activeFilter != null ) {
-            inventoryKeys = inventoryKeys.filter(item => inventory[item].type == activeFilter);
+        if ( activeFilter.length ) {
+            // inventoryKeys = inventoryKeys.filter(item => inventory[item].type == activeFilter);
+            inventoryKeys = inventoryKeys.filter(item => activeFilter.includes(inventory[item].type));
         }
         // filter by search query
         if ( query != false ) {

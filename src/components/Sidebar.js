@@ -9,7 +9,8 @@ class Sidebar extends React.Component {
                 {
                     Object.keys(this.props.filters).map( filter => (
                         <div
-                            className={`filter ${ filter === activeFilter ? "selected" : "" }`}
+                            // className={`filter ${ filter === activeFilter ? "selected" : "" }`}
+                            className={`filter ${ activeFilter.includes(filter) ? "selected" : "" }`}
                             key={ filter }
                             onClick={ () => this.props.handleClick(filter) }>
                             { this.props.filters[filter].label }
