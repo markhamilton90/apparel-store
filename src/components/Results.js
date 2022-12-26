@@ -4,15 +4,15 @@ import Result from './Result';
 class Results extends React.Component {
 
     render() {
-        const activeFilter = this.props.activeFilter;
+        const activeFilters = this.props.activeFilters;
         const inventory = this.props.inventory;
         const query = (this.props.query).trim().toLowerCase();
 
         let inventoryKeys = Object.keys(inventory);
         // filter by filters selected
-        if ( activeFilter.length ) {
-            // inventoryKeys = inventoryKeys.filter(item => inventory[item].type == activeFilter);
-            inventoryKeys = inventoryKeys.filter(item => activeFilter.includes(inventory[item].type));
+        if ( activeFilters.length ) {
+            // inventoryKeys = inventoryKeys.filter(item => inventory[item].type == activeFilters);
+            inventoryKeys = inventoryKeys.filter(item => activeFilters.includes(inventory[item].type));
         }
         // filter by search query
         if ( query != false ) {

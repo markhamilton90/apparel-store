@@ -15,7 +15,7 @@ class Cart extends React.Component {
     render() {
         const cartItems = this.props.inCart;
         return (
-            <div className="cart" onClick={ this.toggleCart }>
+            <div className="cart">
                 <h2>Cart</h2>
                 <ul className={`cart-items ${ this.state.showCart ? 'visible' : '' }`}>
                     {

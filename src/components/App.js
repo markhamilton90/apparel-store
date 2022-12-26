@@ -11,7 +11,7 @@ class App extends React.Component {
     state = {
         inventory: items,
         filters: filters,
-        activeFilter: [],
+        activeFilters: [],
         query: '',
         inCart: {}
     }
@@ -23,9 +23,16 @@ class App extends React.Component {
     }
 
     handleClick = filter => {
-        const newActiveFilter = filter != this.state.activeFilter ? filter : [];
+        const updatedFilters = [ ...this.state.activeFilters ];
+
+        if (updatedFilters.includes(filter)) {
+            updatedFilters.splice(updatedFilters.indexOf(filter), 1)
+        } else {
+            updatedFilters.push(filter);
+        }
+
         this.setState({
-            activeFilter: newActiveFilter
+            activeFilters: updatedFilters
         })
     }
 
@@ -48,8 +55,8 @@ class App extends React.Component {
         return (
             <div className="store">
                 <Searchbar onChange={ this.onChange } />
-                <Sidebar filters={ this.state.filters } handleClick={ this.handleClick } activeFilter={ this.state.activeFilter } />
-                <Results inventory={ this.state.inventory } activeFilter={ this.state.activeFilter } query={ this.state.query } addToCart={ this.addToCart } />
+                <Sidebar filters={ this.state.filters } handleClick={ this.handleClick } activeFilters={ this.state.activeFilters } />
+                <Results inventory={ this.state.inventory } activeFilters={ this.state.activeFilters } query={ this.state.query } addToCart={ this.addToCart } />
                 <Cart inCart={ this.state.inCart }/>
             </div>
         )
