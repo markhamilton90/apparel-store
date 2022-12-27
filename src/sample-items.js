@@ -2,32 +2,32 @@
 const items = {
     item1: {
         title: 'T-shirt',
-        price: 12.99,
+        price: 1299,
         type: 'shirts'
     },
     item2: {
         title: 'Jeans',
-        price: 12.99,
+        price: 1599,
         type: 'pants'
     },
     item3: {
         title: 'Sneakers',
-        price: 12.99,
+        price: 799,
         type: 'shoes'
     },
     item4: {
         title: 'Fedora',
-        price: 12.99,
+        price: 399,
         type: 'hats'
     },
     item5: {
         title: 'Dress shoes',
-        price: 12.99,
+        price: 1199,
         type: 'shoes'
     },
     item6: {
         title: 'Dad hat',
-        price: 12.99,
+        price: 399,
         type: 'hats'
     }
 }
