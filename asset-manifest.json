@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/apparel-store/static/css/main.39ca43db.chunk.css",
-    "main.js": "/apparel-store/static/js/main.7d331864.chunk.js",
-    "main.js.map": "/apparel-store/static/js/main.7d331864.chunk.js.map",
+    "main.js": "/apparel-store/static/js/main.001c707f.chunk.js",
+    "main.js.map": "/apparel-store/static/js/main.001c707f.chunk.js.map",
     "runtime-main.js": "/apparel-store/static/js/runtime-main.5b475e28.js",
     "runtime-main.js.map": "/apparel-store/static/js/runtime-main.5b475e28.js.map",
     "static/css/2.679831fc.chunk.css": "/apparel-store/static/css/2.679831fc.chunk.css",
-    "static/js/2.55739343.chunk.js": "/apparel-store/static/js/2.55739343.chunk.js",
-    "static/js/2.55739343.chunk.js.map": "/apparel-store/static/js/2.55739343.chunk.js.map",
+    "static/js/2.4b726f56.chunk.js": "/apparel-store/static/js/2.4b726f56.chunk.js",
+    "static/js/2.4b726f56.chunk.js.map": "/apparel-store/static/js/2.4b726f56.chunk.js.map",
     "index.html": "/apparel-store/index.html",
     "static/css/2.679831fc.chunk.css.map": "/apparel-store/static/css/2.679831fc.chunk.css.map",
     "static/css/main.39ca43db.chunk.css.map": "/apparel-store/static/css/main.39ca43db.chunk.css.map",
-    "static/js/2.55739343.chunk.js.LICENSE.txt": "/apparel-store/static/js/2.55739343.chunk.js.LICENSE.txt"
+    "static/js/2.4b726f56.chunk.js.LICENSE.txt": "/apparel-store/static/js/2.4b726f56.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5b475e28.js",
     "static/css/2.679831fc.chunk.css",
-    "static/js/2.55739343.chunk.js",
+    "static/js/2.4b726f56.chunk.js",
     "static/css/main.39ca43db.chunk.css",
-    "static/js/main.7d331864.chunk.js"
+    "static/js/main.001c707f.chunk.js"
   ]
 }
