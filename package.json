@@ -1,9 +1,11 @@
 {
   "name": "apparel-store",
   "version": "0.0.3",
+  "homepage": "https://markhamilton90.github.io/apparel-store",
   "private": true,
   "devDependencies": {
     "concurrently": "6.4.0",
+    "gh-pages": "^4.0.0",
     "react-scripts": "4.0.3"
   },
   "dependencies": {
@@ -22,6 +24,8 @@
     "serve": "13.0.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "react-scripts start",
     "start": "react-scripts start",
     "watch": "concurrently --names \"webpack, sass\" --prefix name \"npm run start\" \"npm run sass\"",
