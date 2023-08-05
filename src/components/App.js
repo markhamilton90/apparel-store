@@ -22,6 +22,20 @@ class App extends React.Component {
         })
     }
 
+    clearSearch = event => {
+        event.currentTarget.closest('form').reset();
+
+        this.setState({
+            query: ''
+        })
+    }
+
+    clearCart = () => {
+        this.setState({
+            inCart: {}
+        })
+    }
+
     handleClick = filter => {
         const updatedFilters = [ ...this.state.activeFilters ];
 
@@ -54,10 +68,10 @@ class App extends React.Component {
     render() {
         return (
             <div className="store">
-                <Searchbar onChange={ this.onChange } />
+                <Searchbar onChange={ this.onChange } clearSearch={ this.clearSearch } />
                 <Sidebar filters={ this.state.filters } handleClick={ this.handleClick } activeFilters={ this.state.activeFilters } />
                 <Results inventory={ this.state.inventory } activeFilters={ this.state.activeFilters } query={ this.state.query } addToCart={ this.addToCart } />
-                <Cart inCart={ this.state.inCart }/>
+                <Cart inCart={ this.state.inCart } clearCart={ this.clearCart }/>
             </div>
         )
     }

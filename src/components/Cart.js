@@ -2,22 +2,12 @@ import React from 'react';
 
 class Cart extends React.Component {
 
-    state = {
-        showCart: false
-    }
-
-    toggleCart = () => {
-        this.setState({
-            showCart: !(this.state.showCart)
-        })
-    }
-
     render() {
         const cartItems = this.props.inCart;
         return (
             <div className="cart">
                 <h2>Cart</h2>
-                <ul className={`cart-items ${ this.state.showCart ? 'visible' : '' }`}>
+                <ul className="cart-items">
                     {
                         Object.keys(cartItems).map( item => (
                             <li key={ this.props.itemKey }>
@@ -26,6 +16,13 @@ class Cart extends React.Component {
                         ))
                     }
                 </ul>
+                {
+                    Object.keys(cartItems).length 
+                        ? <button onClick={ this.props.clearCart }>
+                            Clear cart
+                          </button> 
+                        : ''
+                }
             </div>
         )
     }

@@ -4,13 +4,14 @@ class Searchbar extends React.Component {
 
     render() {
         return (
-            <div className="searchbar">
+            <form className="searchbar">
                 <input
                     type="text"
                     placeholder="Enter a search term..."
                     onChange={ this.props.onChange }
                 />
-            </div>
+                <div className="clear" onClick={ this.props.clearSearch }></div>
+            </form>
         )
     }
 }
