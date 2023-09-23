@@ -96,6 +96,26 @@
   padding: 15px;
   margin: 0 10px 10px;
 }
+.store .pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+.store .pagination .btn {
+  border-radius: 50%;
+  background: black;
+  color: white;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin: 0 15px;
+  cursor: pointer;
+}
+.store .pagination .btn[data-disabled=true] {
+  cursor: not-allowed;
+  background: grey;
+}
 .store .cart {
   width: 100%;
   border-top: 1px dashed;

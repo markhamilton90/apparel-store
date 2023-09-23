@@ -3,6 +3,7 @@ import Searchbar from './Searchbar';
 import Sidebar from './Sidebar';
 import Results from './Results';
 import Cart from './Cart';
+import Pagination from './Pagination';
 import items from '../sample-items.js';
 import filters from '../sample-filters.js';
 
@@ -13,7 +14,9 @@ class App extends React.Component {
         filters: filters,
         activeFilters: [],
         query: '',
-        inCart: {}
+        inCart: {},
+        page: 0,
+        per_page: 4
     }
 
     onChange = event => {
@@ -65,12 +68,32 @@ class App extends React.Component {
         })
     }
 
+    changePage = event => {
+        if (event.currentTarget.dataset.disabled == 'true') {
+            return
+        }
+        let page = this.state.page
+        page = event.currentTarget.dataset.next ? (page + 1) : (page - 1)
+        this.setState({
+            page: page
+        })
+    }
+
     render() {
         return (
             <div className="store">
                 <Searchbar onChange={ this.onChange } clearSearch={ this.clearSearch } />
                 <Sidebar filters={ this.state.filters } handleClick={ this.handleClick } activeFilters={ this.state.activeFilters } />
-                <Results inventory={ this.state.inventory } activeFilters={ this.state.activeFilters } query={ this.state.query } addToCart={ this.addToCart } />
+                <Results inventory={ this.state.inventory } 
+                         activeFilters={ this.state.activeFilters } 
+                         query={ this.state.query } 
+                         page={ this.state.page }
+                         per_page={ this.state.per_page }
+                         addToCart={ this.addToCart } />
+                <Pagination page={ this.state.page } 
+                            per_page={ this.state.per_page } 
+                            length={ Object.keys(this.state.inventory).length } 
+                            changePage={ this.changePage } />
                 <Cart inCart={ this.state.inCart } clearCart={ this.clearCart }/>
             </div>
         )
