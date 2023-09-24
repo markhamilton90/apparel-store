@@ -103,19 +103,22 @@
         justify-content: center;
         padding: 15px 0;
         .btn {
-            border-radius: 50%;
-            background: black;
-            color: white;
-            width: 20px;
-            height: 20px;
-            text-align: center;
             margin: 0 15px;
-            cursor: pointer;
-            &[data-disabled="true"] {
-                cursor: not-allowed;
-                background: grey;
-            }
         }
+        // .btn {
+        //     border-radius: 50%;
+        //     background: black;
+        //     color: white;
+        //     width: 20px;
+        //     height: 20px;
+        //     text-align: center;
+        //     margin: 0 15px;
+        //     cursor: pointer;
+        //     &[data-disabled="true"] {
+        //         cursor: not-allowed;
+        //         background: grey;
+        //     }
+        // }
     }
     .cart {
         width: 100%;

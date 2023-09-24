@@ -21,7 +21,8 @@ class App extends React.Component {
 
     onChange = event => {
         this.setState({
-            query: event.currentTarget.value
+            query: event.currentTarget.value,
+            page: 0
         })
     }
 
@@ -29,7 +30,8 @@ class App extends React.Component {
         event.currentTarget.closest('form').reset();
 
         this.setState({
-            query: ''
+            query: '',
+            page: 0
         })
     }
 
@@ -49,7 +51,8 @@ class App extends React.Component {
         }
 
         this.setState({
-            activeFilters: updatedFilters
+            activeFilters: updatedFilters,
+            page: 0
         })
     }
 
@@ -69,11 +72,11 @@ class App extends React.Component {
     }
 
     changePage = event => {
-        if (event.currentTarget.dataset.disabled == 'true') {
+        if (event.currentTarget.hasAttribute('disabled')) {
             return
         }
         let page = this.state.page
-        page = event.currentTarget.dataset.next ? (page + 1) : (page - 1)
+        page = event.currentTarget.classList.contains('btn-next') ? (page + 1) : (page - 1)
         this.setState({
             page: page
         })
@@ -84,16 +87,7 @@ class App extends React.Component {
             <div className="store">
                 <Searchbar onChange={ this.onChange } clearSearch={ this.clearSearch } />
                 <Sidebar filters={ this.state.filters } handleClick={ this.handleClick } activeFilters={ this.state.activeFilters } />
-                <Results inventory={ this.state.inventory } 
-                         activeFilters={ this.state.activeFilters } 
-                         query={ this.state.query } 
-                         page={ this.state.page }
-                         per_page={ this.state.per_page }
-                         addToCart={ this.addToCart } />
-                <Pagination page={ this.state.page } 
-                            per_page={ this.state.per_page } 
-                            length={ Object.keys(this.state.inventory).length } 
-                            changePage={ this.changePage } />
+                <Results inventory={ this.state.inventory } activeFilters={ this.state.activeFilters } query={ this.state.query } page={ this.state.page } per_page={ this.state.per_page } addToCart={ this.addToCart } changePage={ this.changePage } />
                 <Cart inCart={ this.state.inCart } clearCart={ this.clearCart }/>
             </div>
         )

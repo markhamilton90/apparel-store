@@ -1,5 +1,6 @@
 import React from 'react';
 import Result from './Result';
+import Pagination from './Pagination';
 
 class Results extends React.Component {
 
@@ -10,29 +11,37 @@ class Results extends React.Component {
 
         let inventoryKeys = Object.keys(inventory);
 
+        // filter by filters selected
+        if ( activeFilters.length ) {
+            // inventoryKeys = inventoryKeys.filter(item => inventory[item].type == activeFilters);
+            inventoryKeys = inventoryKeys.filter(item => activeFilters.includes(inventory[item].type));
+        }
+        // filter by search query
+        if ( query != false ) {
+            inventoryKeys = inventoryKeys.filter( item => inventory[item].title.trim().toLowerCase().includes(query) || inventory[item].type.trim().toLowerCase().includes(query));
+        }
+
+        // pagination
         let start = this.props.page * this.props.per_page
         let end = start + this.props.per_page
 
-        inventoryKeys = inventoryKeys.slice(start, end)
-
-        // filter by filters selected
-        // if ( activeFilters.length ) {
-        //     // inventoryKeys = inventoryKeys.filter(item => inventory[item].type == activeFilters);
-        //     inventoryKeys = inventoryKeys.filter(item => activeFilters.includes(inventory[item].type));
-        // }
-        // // filter by search query
-        // if ( query != false ) {
-        //     inventoryKeys = inventoryKeys.filter( item => inventory[item].title.trim().toLowerCase().includes(query) || inventory[item].type.trim().toLowerCase().includes(query));
-        // }
+        let pageResults = inventoryKeys.slice(start, end)
 
         return (
-            <div className="results">
-                {
-                    inventoryKeys.map( item => (
-                        <Result key={ item } itemKey={ item } item={ inventory[item] } addToCart={ this.props.addToCart } />
-                    ))
-                }
-            </div>
+            <React.Fragment>
+                <div className="results">
+                    {
+                        pageResults.map( item => (
+                            <Result key={ item } itemKey={ item } item={ inventory[item] } addToCart={ this.props.addToCart } />
+                        ))
+                    }
+                </div>
+                <Pagination 
+                    page={ this.props.page } 
+                    per_page={ this.props.per_page } 
+                    length={ inventoryKeys.length } 
+                    changePage={ this.props.changePage } />
+            </React.Fragment>
         )
     }
 }

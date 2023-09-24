@@ -12,15 +12,9 @@ class Pagination extends React.Component {
 
         return (
             <div className="pagination">
-                <div className="btn btn-prev" 
-                     data-prev 
-                     data-disabled={ disablePrev } 
-                     onClick={ this.props.changePage }>&#8592;</div>
+                <button className="btn btn-prev" disabled={ disablePrev } onClick={ this.props.changePage }>&#8592;</button>
                 <span>{ page }</span>
-                <div className="btn btn-next" 
-                     data-next 
-                     data-disabled={ disableNext } 
-                     onClick={ this.props.changePage }>&#8594;</div>
+                <button className="btn btn-next" disabled={ disableNext } onClick={ this.props.changePage }>&#8594;</button>
             </div>
         )
     }

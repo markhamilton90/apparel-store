@@ -59,6 +59,41 @@ const items = {
         title: 'Dad hat third',
         price: 399,
         type: 'hats'
+    },
+    item13: {
+        title: 'Dad hat second',
+        price: 399,
+        type: 'hats'
+    },
+    item14: {
+        title: 'T-shirt second',
+        price: 1299,
+        type: 'shirts'
+    },
+    item15: {
+        title: 'Jeans second',
+        price: 1599,
+        type: 'pants'
+    },
+    item16: {
+        title: 'Sneakers third',
+        price: 799,
+        type: 'shoes'
+    },
+    item17: {
+        title: 'Fedora third',
+        price: 399,
+        type: 'hats'
+    },
+    item18: {
+        title: 'Dress shoes third',
+        price: 1199,
+        type: 'shoes'
+    },
+    item19: {
+        title: 'Dad hat third',
+        price: 399,
+        type: 'hats'
     }
 }
 

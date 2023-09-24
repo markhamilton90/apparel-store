@@ -103,18 +103,7 @@
   padding: 15px 0;
 }
 .store .pagination .btn {
-  border-radius: 50%;
-  background: black;
-  color: white;
-  width: 20px;
-  height: 20px;
-  text-align: center;
   margin: 0 15px;
-  cursor: pointer;
-}
-.store .pagination .btn[data-disabled=true] {
-  cursor: not-allowed;
-  background: grey;
 }
 .store .cart {
   width: 100%;
