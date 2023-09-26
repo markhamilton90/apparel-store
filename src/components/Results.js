@@ -1,6 +1,7 @@
 import React from 'react';
 import Result from './Result';
 import Pagination from './Pagination';
+import { comparePriceHighToLow, comparePriceLowToHigh } from '../helpers.js';
 
 class Results extends React.Component {
 
@@ -8,6 +9,7 @@ class Results extends React.Component {
         const activeFilters = this.props.activeFilters;
         const inventory = this.props.inventory;
         const query = (this.props.query).trim().toLowerCase();
+        const sort = this.props.sort
 
         let inventoryKeys = Object.keys(inventory);
 
@@ -19,6 +21,19 @@ class Results extends React.Component {
         // filter by search query
         if ( query != false ) {
             inventoryKeys = inventoryKeys.filter( item => inventory[item].title.trim().toLowerCase().includes(query) || inventory[item].type.trim().toLowerCase().includes(query));
+        }
+        // sorting
+        if ( sort != false ) {
+            switch (sort) {
+                case 'price-lh':
+                    inventoryKeys.sort(comparePriceLowToHigh(inventory))
+                    break
+                case 'price-hl':
+                    inventoryKeys.sort(comparePriceHighToLow(inventory))
+                    break
+                default:
+                    break
+            }
         }
 
         // pagination

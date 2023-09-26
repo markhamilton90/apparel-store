@@ -5,6 +5,18 @@ export function formatPrice(cents) {
   });
 }
 
+export function comparePriceHighToLow(arr) {
+  return function(a, b) {
+    return arr[a].price > arr[b].price ? -1 : arr[a].price < arr[b].price ? 1 : 0
+  }
+}
+
+export function comparePriceLowToHigh(arr) {
+  return function(a, b) {
+    return arr[a].price > arr[b].price ? 1 : arr[a].price < arr[b].price ? -1 : 0
+  }
+}
+
 export function rando(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }

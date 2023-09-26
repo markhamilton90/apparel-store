@@ -1,9 +1,9 @@
 import React from 'react';
 import Searchbar from './Searchbar';
+import Sort from './Sort';
 import Sidebar from './Sidebar';
 import Results from './Results';
 import Cart from './Cart';
-import Pagination from './Pagination';
 import items from '../sample-items.js';
 import filters from '../sample-filters.js';
 
@@ -14,9 +14,17 @@ class App extends React.Component {
         filters: filters,
         activeFilters: [],
         query: '',
+        sort: '',
         inCart: {},
         page: 0,
         per_page: 4
+    }
+
+    updateSort = value => {
+        this.setState({
+            sort: value,
+            page: 0
+        })
     }
 
     onChange = event => {
@@ -86,8 +94,9 @@ class App extends React.Component {
         return (
             <div className="store">
                 <Searchbar onChange={ this.onChange } clearSearch={ this.clearSearch } />
+                <Sort updateSort={ this.updateSort } />
                 <Sidebar filters={ this.state.filters } handleClick={ this.handleClick } activeFilters={ this.state.activeFilters } />
-                <Results inventory={ this.state.inventory } activeFilters={ this.state.activeFilters } query={ this.state.query } page={ this.state.page } per_page={ this.state.per_page } addToCart={ this.addToCart } changePage={ this.changePage } />
+                <Results inventory={ this.state.inventory } activeFilters={ this.state.activeFilters } query={ this.state.query } sort={ this.state.sort } page={ this.state.page } per_page={ this.state.per_page } addToCart={ this.addToCart } changePage={ this.changePage } />
                 <Cart inCart={ this.state.inCart } clearCart={ this.clearCart }/>
             </div>
         )

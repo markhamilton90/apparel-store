@@ -55,6 +55,16 @@
 .store .searchbar .clear:after {
   transform: translate(-50%, -50%) rotate(135deg);
 }
+.store .sort-dropdown {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.store .sort-dropdown p {
+  margin: 0 10px 0 0;
+}
 .store .sidebar {
   display: flex;
   flex-wrap: wrap;
@@ -65,10 +75,10 @@
   padding-top: 6px;
 }
 .store .sidebar .filter {
-  flex-basis: calc(50% - 6px);
+  flex-basis: 100%;
   background: #fff;
   text-align: center;
-  padding: 25px 0;
+  padding: 15px 0;
   transition: all 0.25s;
   margin-right: 6px;
   margin-bottom: 6px;
