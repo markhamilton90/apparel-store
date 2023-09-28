@@ -11,12 +11,12 @@ const items = {
         type: 'pants'
     },
     item3: {
-        title: 'Sneakers',
+        title: 'Glue',
         price: 799,
         type: 'shoes'
     },
     item4: {
-        title: 'Fedora',
+        title: 'Fedora second',
         price: 399,
         type: 'hats'
     },

@@ -3,13 +3,13 @@ import React from 'react';
 class Pagination extends React.Component {
 
     render() {
-        const page = this.props.page
-        const per_page = this.props.per_page
         const length = this.props.length
-        const totalPages = Math.floor(length / per_page)
+        const per_page = this.props.per_page
+        const page = length ? this.props.page + 1 : 0
+        const totalPages = length ? Math.ceil(length / per_page) : 0
 
-        const disablePrev = page <= 0
-        const disableNext = (page + 1) * per_page >= length
+        const disablePrev = page <= 1
+        const disableNext = (page) * per_page >= length
 
         return (
             <div className="pagination">
