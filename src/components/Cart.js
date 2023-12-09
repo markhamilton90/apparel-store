@@ -7,6 +7,7 @@ class Cart extends React.Component {
         return (
             <div className="cart">
                 <h2>Cart</h2>
+                <button onClick={ this.props.goToCart }>Go to Cart</button>
                 <ul className="cart-items">
                     {
                         Object.keys(cartItems).map( item => (

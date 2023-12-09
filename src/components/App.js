@@ -90,6 +90,10 @@ class App extends React.Component {
         })
     }
 
+    goToCart = () => {
+        this.props.history.push('/cart')
+    }
+
     render() {
         return (
             <div className="store">
@@ -97,7 +101,7 @@ class App extends React.Component {
                 <Sort updateSort={ this.updateSort } />
                 <Sidebar filters={ this.state.filters } handleClick={ this.handleClick } activeFilters={ this.state.activeFilters } />
                 <Results inventory={ this.state.inventory } activeFilters={ this.state.activeFilters } query={ this.state.query } sort={ this.state.sort } page={ this.state.page } per_page={ this.state.per_page } addToCart={ this.addToCart } changePage={ this.changePage } />
-                <Cart inCart={ this.state.inCart } clearCart={ this.clearCart }/>
+                <Cart inCart={ this.state.inCart } clearCart={ this.clearCart } goToCart={ this.goToCart }/>
             </div>
         )
     }
