@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import Searchbar from './Searchbar';
 import Sort from './Sort';
 import Sidebar from './Sidebar';
@@ -15,7 +16,7 @@ class App extends React.Component {
         activeFilters: [],
         query: '',
         sort: '',
-        inCart: {},
+        // inCart: {},
         page: 0,
         per_page: 4
     }
@@ -43,11 +44,11 @@ class App extends React.Component {
         })
     }
 
-    clearCart = () => {
-        this.setState({
-            inCart: {}
-        })
-    }
+    // clearCart = () => {
+    //     this.setState({
+    //         inCart: {}
+    //     })
+    // }
 
     handleClick = filter => {
         const updatedFilters = [ ...this.state.activeFilters ];
@@ -64,20 +65,20 @@ class App extends React.Component {
         })
     }
 
-    addToCart = (key, value) => {
-        const inCart = { ...this.state.inCart };
+    // addToCart = (key, value) => {
+    //     const inCart = { ...this.state.inCart };
 
-        if (!inCart.hasOwnProperty(key)) {
-            inCart[key] = value;
-            inCart[key]['count'] = 1;
-        } else {
-            inCart[key]['count'] += 1;
-        }
+    //     if (!inCart.hasOwnProperty(key)) {
+    //         inCart[key] = value;
+    //         inCart[key]['count'] = 1;
+    //     } else {
+    //         inCart[key]['count'] += 1;
+    //     }
 
-        this.setState({
-            inCart: inCart
-        })
-    }
+    //     this.setState({
+    //         inCart: inCart
+    //     })
+    // }
 
     changePage = event => {
         if (event.currentTarget.hasAttribute('disabled')) {
@@ -100,11 +101,11 @@ class App extends React.Component {
                 <Searchbar onChange={ this.onChange } clearSearch={ this.clearSearch } />
                 <Sort updateSort={ this.updateSort } />
                 <Sidebar filters={ this.state.filters } handleClick={ this.handleClick } activeFilters={ this.state.activeFilters } />
-                <Results inventory={ this.state.inventory } activeFilters={ this.state.activeFilters } query={ this.state.query } sort={ this.state.sort } page={ this.state.page } per_page={ this.state.per_page } addToCart={ this.addToCart } changePage={ this.changePage } />
-                <Cart inCart={ this.state.inCart } clearCart={ this.clearCart } goToCart={ this.goToCart }/>
+                <Results inventory={ this.state.inventory } activeFilters={ this.state.activeFilters } query={ this.state.query } sort={ this.state.sort } page={ this.state.page } per_page={ this.state.per_page } addToCart={ this.props.addToCart } changePage={ this.changePage } />
+                <Cart inCart={ this.props.inCart } clearCart={ this.props.clearCart } goToCart={ this.goToCart }/>
             </div>
         )
     }
 }
 
-export default App;
+export default withRouter(App);
