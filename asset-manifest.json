@@ -1,23 +1,13 @@
 {
   "files": {
-    "main.css": "/apparel-store/static/css/main.39ca43db.chunk.css",
-    "main.js": "/apparel-store/static/js/main.001c707f.chunk.js",
-    "main.js.map": "/apparel-store/static/js/main.001c707f.chunk.js.map",
-    "runtime-main.js": "/apparel-store/static/js/runtime-main.5b475e28.js",
-    "runtime-main.js.map": "/apparel-store/static/js/runtime-main.5b475e28.js.map",
-    "static/css/2.679831fc.chunk.css": "/apparel-store/static/css/2.679831fc.chunk.css",
-    "static/js/2.4b726f56.chunk.js": "/apparel-store/static/js/2.4b726f56.chunk.js",
-    "static/js/2.4b726f56.chunk.js.map": "/apparel-store/static/js/2.4b726f56.chunk.js.map",
+    "main.css": "/apparel-store/static/css/main.ace19551.css",
+    "main.js": "/apparel-store/static/js/main.95b0c7bc.js",
     "index.html": "/apparel-store/index.html",
-    "static/css/2.679831fc.chunk.css.map": "/apparel-store/static/css/2.679831fc.chunk.css.map",
-    "static/css/main.39ca43db.chunk.css.map": "/apparel-store/static/css/main.39ca43db.chunk.css.map",
-    "static/js/2.4b726f56.chunk.js.LICENSE.txt": "/apparel-store/static/js/2.4b726f56.chunk.js.LICENSE.txt"
+    "main.ace19551.css.map": "/apparel-store/static/css/main.ace19551.css.map",
+    "main.95b0c7bc.js.map": "/apparel-store/static/js/main.95b0c7bc.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.5b475e28.js",
-    "static/css/2.679831fc.chunk.css",
-    "static/js/2.4b726f56.chunk.js",
-    "static/css/main.39ca43db.chunk.css",
-    "static/js/main.001c707f.chunk.js"
+    "static/css/main.ace19551.css",
+    "static/js/main.95b0c7bc.js"
   ]
 }
