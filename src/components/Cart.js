@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
+
 export default function Cart( props ) {
     const cartItems = props.inCart;
     return (
         <div className="cart">
             <h2>Cart</h2>
-            <button onClick={ props.goToCart }>Go to Cart</button>
+            <Link class="btn" to="/cart">Go to Cart</Link>
             <ul className="cart-items">
                 {
                     Object.keys(cartItems).map( item => (

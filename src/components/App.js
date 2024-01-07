@@ -69,10 +69,6 @@ class App extends React.Component {
         })
     }
 
-    goToCart = () => {
-        this.props.history.push('/cart')
-    }
-
     render() {
         return (
             <div className="store">
@@ -101,7 +97,6 @@ class App extends React.Component {
                 <Cart 
                     inCart={ this.props.inCart } 
                     clearCart={ this.props.clearCart } 
-                    goToCart={ this.goToCart }
                 />
             </div>
         )
