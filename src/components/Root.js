@@ -1,56 +1,46 @@
-import React from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './App';
 import CartPage from './CartPage';
 import NotFound from './NotFound';
 
-class Root extends React.Component {
+export default function Root() {
 
-    state = {
-        inCart: {},
+    const [inCart, setInCart] = useState({})
+
+    function clearCart() {
+        setInCart({})
     }
 
-    clearCart = () => {
-        this.setState({
-            inCart: {}
-        })
-    }
+    function addToCart(key, value) {
+        const cartObj = {...inCart}
 
-    addToCart = (key, value) => {
-        const inCart = { ...this.state.inCart };
-
-        if (!inCart.hasOwnProperty(key)) {
-            inCart[key] = value;
-            inCart[key]['count'] = 1;
+        if (!cartObj.hasOwnProperty(key)) {
+            cartObj[key] = value;
+            cartObj[key]['count'] = 1;
         } else {
-            inCart[key]['count'] += 1;
+            cartObj[key]['count'] += 1;
         }
 
-        this.setState({
-            inCart: inCart
-        })
+        setInCart(cartObj)
     }
 
-    render() {
-        return (
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path="/">
-                        <App inCart={this.state.inCart} clearCart={this.clearCart} addToCart={this.addToCart}/>
-                    </Route>
-                    <Route exact path="/apparel-store">
-                        <App inCart={this.state.inCart} clearCart={this.clearCart} addToCart={this.addToCart}/>
-                    </Route>
-                    <Route exact path="/cart">
-                        <CartPage inCart={this.state.inCart} />
-                    </Route>
-                    <Route>
-                        <NotFound />
-                    </Route>
-                </Switch>
-            </BrowserRouter>
-        )
-    }
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/">
+                    <App inCart={inCart} clearCart={clearCart} addToCart={addToCart} />
+                </Route>
+                <Route exact path="/apparel-store">
+                    <App inCart={inCart} clearCart={clearCart} addToCart={addToCart} />
+                </Route>
+                <Route exact path="/cart">
+                    <CartPage inCart={inCart} />
+                </Route>
+                <Route>
+                    <NotFound />
+                </Route>
+            </Switch>
+        </BrowserRouter>
+    )
 }
-
-export default Root;
