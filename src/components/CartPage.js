@@ -1,7 +1,5 @@
 export default function CartPage( props ) {
-
     const cartItems = props.inCart;
-
     return (
         <ul className="cart-items">
             <h2>Cart Page</h2>

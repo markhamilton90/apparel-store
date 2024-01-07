@@ -1,25 +1,21 @@
-import React from 'react'
+import { useRef } from 'react';
 
-class Sort extends React.Component {
+export default function Sort( props ) {
 
-    dropdownRef = React.createRef();
+    const dropdownRef = useRef('');
 
-    componentDidMount() {
-        this.props.updateSort(this.dropdownRef.current.value)
-    }
+    // componentDidMount() {
+    //     props.updateSort(dropdownRef.current.value)
+    // }
 
-    render() {
-        return (
-            <div className="sort-dropdown">
-                <p>Sort by: </p>
-                <select ref={ this.dropdownRef } defaultValue="default" onChange={ () => this.props.updateSort(this.dropdownRef.current.value ) }>
-                    <option value="default">Default</option>
-                    <option value="price-hl">Price (High to Low)</option>
-                    <option value="price-lh">Price (Low to High)</option>
-                </select>
-            </div>
-        )
-    }
+    return (
+        <div className="sort-dropdown">
+            <p>Sort by: </p>
+            <select ref={ dropdownRef } defaultValue="default" onChange={ () => props.updateSort(dropdownRef.current.value ) }>
+                <option value="default">Default</option>
+                <option value="price-hl">Price (High to Low)</option>
+                <option value="price-lh">Price (Low to High)</option>
+            </select>
+        </div>
+    )
 }
-
-export default Sort;
