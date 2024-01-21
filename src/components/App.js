@@ -18,8 +18,8 @@ const App = ( props ) => {
     const [page, setPage] = useState(0)
     const [per_page, setPerPage] = useState(4)
 
-    function updateSort( value ) {
-        setSort(value)
+    function updateSort( event ) {
+        setSort(event.currentTarget.value)
         setPage(0)
     }
 

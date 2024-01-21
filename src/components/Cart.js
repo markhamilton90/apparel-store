@@ -10,7 +10,7 @@ export default function Cart( props ) {
                 {
                     Object.keys(cartItems).map( item => (
                         <li key={ props.itemKey }>
-                            { cartItems[item].title } { cartItems[item].count > 1 ? `x${ cartItems[item].count }` : '' }
+                            { cartItems[item].title } { cartItems[item].count > 1 ? ` (${ cartItems[item].count })` : '' }
                         </li>
                     ))
                 }

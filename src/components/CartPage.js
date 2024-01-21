@@ -8,7 +8,9 @@ export default function CartPage( props ) {
                 <h2>Cart Page</h2>
                 {
                     Object.keys(cartItems).map( item => (
-                        <h2>{ cartItems[item].title }</h2>
+                        <p>
+                            { cartItems[item].title } { cartItems[item].count > 1 ? ` (${ cartItems[item].count })` : '' }
+                        </p>
                     ))
                 }
             </ul>
